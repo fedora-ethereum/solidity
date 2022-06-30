@@ -42,10 +42,12 @@ include(EthCcache)
 
 # Let's find our dependencies
 include(EthDependencies)
-include(fmtlib)
-include(jsoncpp)
-include(range-v3)
-include_directories(SYSTEM ${JSONCPP_INCLUDE_DIR})
+
+find_package(fmt CONFIG REQUIRED)
+find_package(jsoncpp CONFIG REQUIRED)
+find_package(range-v3 CONFIG REQUIRED)
+
+#include_directories(SYSTEM ${FMTLIB_INCLUDE_DIR} ${JSONCPP_INCLUDE_DIR} ${RANGE_V3_INCLUDE_DIR})
 
 find_package(Threads)
 
