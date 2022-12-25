@@ -179,7 +179,7 @@ private:
 			else
 			{
 				solAssert(!IRVariable{*varDecl}.hasPart("offset"));
-				value = "0";
+				value = string("0");
 			}
 		}
 		else if (varDecl->type()->dataStoredIn(DataLocation::CallData))
