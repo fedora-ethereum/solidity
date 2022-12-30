@@ -214,5 +214,5 @@ set(sources
 	experimental/codegen/IRGeneratorForStatements.h
 )
 
-add_library(solidity ${sources})
+add_library(solidity STATIC ${sources})
 target_link_libraries(solidity PUBLIC yul evmasm langutil smtutil solutil Boost::boost fmt::fmt-header-only Threads::Threads)
