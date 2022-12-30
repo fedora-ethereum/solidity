@@ -30,5 +30,5 @@ set(sources
 	UniqueErrorReporter.h
 )
 
-add_library(langutil ${sources})
+add_library(langutil STATIC ${sources})
 target_link_libraries(langutil PUBLIC solutil fmt::fmt-header-only)
