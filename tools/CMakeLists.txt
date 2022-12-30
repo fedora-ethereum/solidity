@@ -42,7 +42,7 @@ set(libphaser_sources
 	yulPhaser/SimulationRNG.h
 	yulPhaser/SimulationRNG.cpp
 )
-add_library(phaser ${libphaser_sources})
+add_library(phaser STATIC ${libphaser_sources})
 target_link_libraries(phaser PUBLIC solidity Boost::boost Boost::program_options)
 
 add_executable(yul-phaser yulPhaser/main.cpp)

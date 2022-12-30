@@ -39,5 +39,5 @@ set(sources
 	SimplificationRules.h
 )
 
-add_library(evmasm ${sources})
+add_library(evmasm STATIC ${sources})
 target_link_libraries(evmasm PUBLIC solutil fmt::fmt-header-only)
