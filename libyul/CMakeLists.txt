@@ -1,4 +1,4 @@
-add_library(yul
+add_library(yul STATIC
 	${GENERATED_POLYFILL_HEADERS}
 
 	AsmAnalysis.cpp
