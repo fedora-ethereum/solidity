@@ -17,5 +17,5 @@ set(sources
 )
 
 
-add_library(smtutil ${sources})
+add_library(smtutil STATIC ${sources})
 target_link_libraries(smtutil PUBLIC solutil Boost::boost)
