@@ -38,7 +38,7 @@ if (${USE_Z3_DLOPEN})
   set(z3_SRCS ${z3_SRCS} ${Z3_WRAPPER} Z3Loader.cpp Z3Loader.h)
 endif()
 
-add_library(smtutil ${sources} ${z3_SRCS} ${cvc4_SRCS})
+add_library(smtutil STATIC ${sources} ${z3_SRCS} ${cvc4_SRCS})
 target_link_libraries(smtutil PUBLIC solutil Boost::boost)
 
 if (${USE_Z3_DLOPEN})
