@@ -44,7 +44,7 @@ set(sources
 	Whiskers.h
 )
 
-add_library(solutil ${sources})
+add_library(solutil STATIC ${sources})
 target_link_libraries(solutil PUBLIC jsoncpp Boost::boost Boost::filesystem Boost::system range-v3 fmt::fmt-header-only)
 target_include_directories(solutil PUBLIC "${PROJECT_SOURCE_DIR}")
 add_dependencies(solutil solidity_BuildInfo.h)
