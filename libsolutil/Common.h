@@ -46,6 +46,7 @@
 #include <utility>
 #include <vector>
 #include <functional>
+#include <cstdint>
 #include <string>
 
 namespace solidity
