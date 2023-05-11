@@ -97,8 +97,6 @@ CallGraph FunctionCallGraphBuilder::buildDeployedGraph(
 	// assigned to state variables and as such may be reachable after deployment as well.
 	builder.m_currentNode = CallGraph::SpecialNode::InternalDispatch;
 	set<CallGraph::Node, CallGraph::CompareByID> defaultNode;
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdangling-reference"
 	for (CallGraph::Node const& dispatchTarget: util::valueOrDefault(_creationGraph.edges, CallGraph::SpecialNode::InternalDispatch, defaultNode))
 	{
 		solAssert(!holds_alternative<CallGraph::SpecialNode>(dispatchTarget), "");
@@ -107,7 +105,6 @@ CallGraph FunctionCallGraphBuilder::buildDeployedGraph(
 		// Visit the callable to add not only it but also everything it calls too
 		builder.functionReferenced(*get<CallableDeclaration const*>(dispatchTarget), false);
 	}
-#pragma GCC diagnostic pop
 
 	builder.m_currentNode = CallGraph::SpecialNode::Entry;
 	builder.processQueue();
