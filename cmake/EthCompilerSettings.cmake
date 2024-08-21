@@ -81,12 +81,6 @@ if (("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU") OR ("${CMAKE_CXX_COMPILER_ID}" MA
 		eth_add_cxx_compiler_flag_if_supported(-Wno-unknown-attributes)
 	endif()
 
-	# Configuration-specific compiler settings.
-	set(CMAKE_CXX_FLAGS_DEBUG          "-O0 -g3 -DETH_DEBUG")
-	set(CMAKE_CXX_FLAGS_MINSIZEREL     "-Os -DNDEBUG")
-	set(CMAKE_CXX_FLAGS_RELEASE        "-O3 -DNDEBUG")
-	set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-O2 -g3")
-
 	# Additional GCC-specific compiler settings.
 	if ("${CMAKE_CXX_COMPILER_ID}" MATCHES "GNU")
 		# Check that we've got GCC 11.0 or newer.
